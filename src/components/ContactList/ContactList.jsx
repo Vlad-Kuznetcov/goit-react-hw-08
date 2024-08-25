@@ -10,7 +10,7 @@ const ContactList = () => {
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
   return (
-    <div className={s.container}>
+    <ul className={s.container}>
       {filteredData.map((contacts) => (
         <Contact
           key={contacts.id}
@@ -18,7 +18,7 @@ const ContactList = () => {
           // handleDeleteContact={handleDeleteContact}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 
