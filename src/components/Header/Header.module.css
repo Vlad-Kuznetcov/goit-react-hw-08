@@ -1,0 +1,23 @@
+.list {
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.item {
+  list-style-type: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+}
