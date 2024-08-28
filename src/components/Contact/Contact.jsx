@@ -2,7 +2,7 @@ import s from "../Contact/Contact.module.css";
 import { GoPersonFill } from "react-icons/go";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { deleteContactThunk } from "../../redux/contacts/contactsOps";
+import { deleteContactThunk } from "../../redux/contacts/operations";
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();

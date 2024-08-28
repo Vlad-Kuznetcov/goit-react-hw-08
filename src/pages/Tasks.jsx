@@ -4,7 +4,7 @@ import ContactList from "../components/ContactList/ContactList";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectIsError, selectIsLoading } from "../redux/contacts/selectors";
-import { fetchContactsThunk } from "../redux/contacts/contactsOps";
+import { fetchContactsThunk } from "../redux/contacts/operations";
 import { selectIsLoggenIn } from "../redux/auth/selectors";
 import { Navigate } from "react-router-dom";
 

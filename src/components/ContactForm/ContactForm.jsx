@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import s from "../ContactForm/ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
-import { addContactThunk } from "../../redux/contacts/contactsOps";
+import { addContactThunk } from "../../redux/contacts/operations";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
