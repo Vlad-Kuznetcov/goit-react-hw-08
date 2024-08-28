@@ -1,10 +1,3 @@
-// import { useDispatch, useSelector } from "react-redux";
-// import ContactForm from "./components/ContactForm/ContactForm";
-// import ContactList from "./components/ContactList/ContactList";
-// import SearchBox from "./components/SearchBox/SearchBox";
-// import { useEffect } from "react";
-// import { fetchContactsThunk } from "./redux/contactsOps";
-// import { selectIsError, selectIsLoading } from "./redux/selectors";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -12,17 +5,22 @@ import Tasks from "./pages/Tasks";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/SingUp/Signup";
 import NotFound from "./pages/NotFound";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { refreshUserThunk } from "./redux/auth/operations";
+import { selectIsRefreshing } from "./redux/auth/selectors";
+import Loader from "./components/Loader";
 
 function App() {
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  // const isError = useSelector(selectIsError);
+  const isRefresh = useSelector(selectIsRefreshing);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(fetchContactsThunk());
-  // }, [dispatch]);
-
-  return (
+  return isRefresh ? (
+    <Loader />
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
