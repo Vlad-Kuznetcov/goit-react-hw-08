@@ -5,10 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectIsError, selectIsLoading } from "../redux/contacts/selectors";
 import { fetchContactsThunk } from "../redux/contacts/operations";
-import { selectIsLoggenIn } from "../redux/auth/selectors";
-import { Navigate } from "react-router-dom";
 
-const Tasks = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectIsError);
@@ -17,10 +15,6 @@ const Tasks = () => {
     dispatch(fetchContactsThunk());
   }, [dispatch]);
 
-  const isLoggenIn = useSelector(selectIsLoggenIn);
-  if (!isLoggenIn) {
-    return <Navigate to="/login" />;
-  }
   return (
     <div>
       <h1>Phonebook</h1>
@@ -33,4 +27,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default Contacts;

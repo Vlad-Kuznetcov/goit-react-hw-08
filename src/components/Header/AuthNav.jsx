@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import s from "../Header/Header.module.css";
 
-const GuestBar = () => {
+const AuthNav = () => {
   return (
     <>
       <li>
@@ -18,4 +18,4 @@ const GuestBar = () => {
   );
 };
 
-export default GuestBar;
+export default AuthNav;

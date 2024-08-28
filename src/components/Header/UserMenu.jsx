@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { LogoutThunk } from "../../redux/auth/operations";
 
-const UserBar = () => {
+const UserMenu = () => {
   const dispatch = useDispatch();
   return (
     <li>
@@ -10,4 +10,4 @@ const UserBar = () => {
   );
 };
 
-export default UserBar;
+export default UserMenu;
