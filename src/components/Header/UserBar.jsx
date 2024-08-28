@@ -1,7 +1,11 @@
+import { useDispatch } from "react-redux";
+import { LogoutThunk } from "../../redux/auth/operations";
+
 const UserBar = () => {
+  const dispatch = useDispatch();
   return (
     <li>
-      <button>Exit</button>
+      <button onClick={() => dispatch(LogoutThunk())}>Exit</button>
     </li>
   );
 };
